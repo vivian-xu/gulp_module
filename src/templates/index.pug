@@ -1,0 +1,42 @@
+
+doctype html
+html( lang="en" )
+	head
+		meta( charset="utf-8")
+		meta( name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+		meta( http-equiv="x-ua-compatible", content="ie=edge")
+
+		title #{course} 学习
+
+		script(src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js")
+		//- script(src="js/libs/runtime.js")
+		script(src="../../node_modules/jade/runtime.js")
+
+		script(src="./runtime_test.js")
+		script.
+			var runtimeNode = document.getElementById('testRuntime');
+			var runtimeHtml = template({
+				isRuntime: 这是个变量
+			});
+			runtimeNode.innerHTML = runtimeHtml;
+
+	body
+		h1 dataTest 里的数据
+		h2 学生信息
+		p.
+			名字 :  #{name}
+			年龄 :  #{age}
+			课程 :  #{course}
+
+		h1 testRuntime
+		#testRuntime
+
+
+
+
+
+
+
+
+
+
